@@ -290,6 +290,177 @@ Example: Playbill, May 27-June 18, 1988, Clarence Brown Theatre, Directed by Alb
           </element>
         </children>
       </element>
+      <element name="originInfo">
+        <properties>
+          <type>markup</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>originInfo</value>
+            </create>
+            <read>NULL</read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="dateIssued">
+            <properties>
+              <type>markup</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <description>Enter the premier date of the production in the following form: Month Day, Year (e.g. April 4, 2010)</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Date</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;dateIssued&gt;%Value%&lt;/dateIssued&gt;</value>
+                </create>
+                <read>
+                  <path>mods:dateIssued</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="publisher">
+            <properties>
+              <type>markup</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>University of Tennessee, Knoxville. Department of Theatre</default_value>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Publisher</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>publisher</value>
+                </create>
+                <read>
+                  <path>mods:publisher</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="place">
+            <properties>
+              <type>markup</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>place</value>
+                </create>
+                <read>
+                  <path>mods:place</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children>
+              <element name="placeTerm">
+                <properties>
+                  <type>textfield</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <default_value>University of Tennessee, Knoxville</default_value>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;placeTerm valueURI="http://id.loc.gov/authorities/names/n80003889"&gt;%Value%&lt;/placeTerm&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:placeTerm</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
+          </element>
+        </children>
+      </element>
       <element name="Name">
         <properties>
           <type>tabpanel</type>
@@ -332,7 +503,7 @@ Example: Playbill, May 27-June 18, 1988, Clarence Brown Theatre, Directed by Alb
                   <multiple>FALSE</multiple>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
-                  <title>Contributor</title>
+                  <title>Name</title>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
@@ -363,7 +534,7 @@ Example: Playbill, May 27-June 18, 1988, Clarence Brown Theatre, Directed by Alb
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
                   <default_value>naf</default_value>
-                  <description>Enter the authority used for the Director's name (typically naf). If no authority is used, delete the default value.</description>
+                  <description>Enter the authority used for the name (typically naf). If no authority is used, delete the default value and leave box blank.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -399,7 +570,7 @@ Example: Playbill, May 27-June 18, 1988, Clarence Brown Theatre, Directed by Alb
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Copy and paste the valueURI if a controlled form of a name is used for the Director.</description>
+                  <description>Copy and paste the valueURI from https://id.loc.gov if a controlled form of a name is used for the name.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -885,34 +1056,6 @@ Example: Playbill, May 27-June 18, 1988, Clarence Brown Theatre, Directed by Alb
         </properties>
         <children/>
       </element>
-      <element name="accessCondition">
-        <properties>
-          <type>markup</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>self::node()</path>
-              <context>parent</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/InC/1.0/"&gt;In Copyright&lt;/accessCondition&gt;</value>
-            </create>
-            <read>NULL</read>
-            <update>NULL</update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
       <element name="projectTitle">
         <properties>
           <type>markup</type>
@@ -1084,6 +1227,34 @@ Example: Playbill, May 27-June 18, 1988, Clarence Brown Theatre, Directed by Alb
             </children>
           </element>
         </children>
+      </element>
+      <element name="accessCondition">
+        <properties>
+          <type>markup</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/InC/1.0/"&gt;In Copyright&lt;/accessCondition&gt;</value>
+            </create>
+            <read>NULL</read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
       </element>
     </children>
   </form>
